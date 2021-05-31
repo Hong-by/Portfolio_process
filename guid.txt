@@ -1,3 +1,15 @@
+//Main Color
+
 #7c41f5
 #ff9062
 #3acbe8
+
+
+
+//using icon
+
+fa-database
+fa-thermometer-half
+fa-clone
+fa-chart-o
+
