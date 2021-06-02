@@ -24,6 +24,7 @@
 
   <!-- Plugin CSS Link -->
   <link rel="stylesheet" href="/schedule/lib/css/lightslider.css">
+  <link rel="stylesheet" href="/schedule/lib/css/piechart.css">
 
   <!-- Main CSS Link -->
   <link rel="stylesheet" href="/schedule/CSS/style.css">
@@ -42,7 +43,7 @@
     <div class="dashboard">
 
       <header>
-        <h2><a href="#"><i class="custom-font"></i></h2>
+        <h2><a href="#"><i class="custom-font"></i></a></h2>
         <ul class="gnb">
           <li><a href="#"><i class="fa fa-trello"></i></a></li>
           <li><a href="#"><i class="fa fa-pencil"></i></a></li>
@@ -55,6 +56,8 @@
           <span></span>
         </div>
       </header>
+
+      
 
       <section class="graph-ui">
         <div class="intro">
@@ -82,17 +85,32 @@
             <a href="#">More Details</a>
             <i class="fa fa-database"></i>
           </div>
-
         </div>
         <div class="each-pofol">
           <div class="each-title">
             <h3>Each Portfolio Process Rate</h3>
           </div>
           <div class="each-graph">
-            <div class="db-pofol"></div>
-            <div class="api-pofol"></div>
-            <div class="renewal-pofol"></div>
-            <div class="planning-pofol"></div>
+            <div class="db-pofol">
+              <span class="chart" data-percent="86">
+                <span class="percent"></span>
+              </span>
+            </div>
+            <div class="api-pofol">
+              <span class="chart" data-percent="60">
+                <span class="percent"></span>
+              </span>
+            </div>
+            <div class="renewal-pofol">
+              <span class="chart" data-percent="40">
+                <span class="percent"></span>
+              </span>
+            </div>
+            <div class="planning-pofol">
+              <span class="chart" data-percent="15">
+                <span class="percent"></span>
+              </span>
+            </div>
           </div>
         </div>
         <div class="total-pofol"></div>
@@ -128,7 +146,6 @@
             </li>
           </ul>
         </div>
-
         <div class="each-project">
           <div class="each-btns">
             <button class="active">Database</button>
@@ -171,6 +188,7 @@
   crossorigin="anonymous"></script>
 
   <script src="/schedule/lib/js/lightslider.js"></script>
+  <script src="/schedule/lib/js/easypiechart.js"></script>
   <script src="/schedule/js/index.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
@@ -182,8 +200,34 @@
         speed: 400,
         auto:true,
         pause: 7000,
+        mode:'fade',
+        adaptiveHeight:true,
       }); 
     });
+  </script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+        function startPie(a, b, c){
+          var chart = window.chart = new EasyPieChart(document.querySelector(a + ' .chart'), {
+          easing: 'easeOutElastic',
+          delay: 3000,
+          barColor: b,
+          trackColor: c,
+          scaleColor: false,
+          lineWidth: 10,
+          trackWidth: 8,
+          lineCap: 'round',
+            onStep: function(from, to, percent) {
+              this.el.children[0].innerHTML = Math.round(percent);
+            }
+          });
+        }
+        startPie('.db-pofol', '#7c41f5', '#c1a3ff');
+        startPie('.api-pofol', '#ff9062', '#fcbca2');
+        startPie('.renewal-pofol', '#3acbe8', '#91edff');
+        startPie('.planning-pofol', '#69c', '#ace');
+      });
   </script>
 </body>
 </html>

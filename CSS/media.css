@@ -12,12 +12,18 @@
   
 /* Table-ui Contents Style Code */
   .table-ui{height: calc(90% - 10px); margin-top: 10px; width: 40%; padding: 0;}
+
+  .chart{width: 100%; height: 100%;}
+  .chart canvas{width: auto!important; height: 100%!important; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 5px;}
 }
 
 @media screen and (max-width: 950px){
   /* Graph-ui Contents Style Code */
   .graph-ui>div.each-pofol{height: 26%;}
   .graph-ui>div.total-pofol{height: 40%;}
+
+  .chart{width: 100%; height: 100%;}
+  .chart canvas{width: auto!important; height: 100%!important; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 5px;}
 
 }
 
@@ -43,6 +49,9 @@
   /* Table-ui Contents Style Code */
   .table-ui{height: auto; margin-top: 10px; width: 100%;}
 
+  .chart{width: 100%; height: 100%;}
+  .chart canvas{width: auto!important; height: 75%!important; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
 }
 
 @media screen and (max-width: 400px){
@@ -50,7 +59,7 @@
   header h2{width: 20px;}
   header .gnb{display: none;}
   header .sign-out{display: none;}
-
+  .custom-font{font-size: 60px;}
   /* Mobile Menu Icon Style Code */
   .mobile-menu{display: block;}
 
