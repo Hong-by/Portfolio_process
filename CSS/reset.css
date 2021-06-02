@@ -7,5 +7,6 @@ input, button, textarea{outline: 0;}
 
 /* Main Layout Code */
 body{font-family: 'Roboto', 'Noto Sans KR', sans-serif; font-size: 14px;}
+/* body{font-family: 'todo-logo-for-lecture', sans-serif; font-size: 14px;} */
 .clearfix:after{content : ''; display: block; clear: both;}
 

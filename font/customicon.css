@@ -1,0 +1,19 @@
+@font-face { 
+    font-family: 'todo-logo-for-lecture'; 
+    src: url('/schedule/font/todo-logo-for-lecture-Regular.eot') format('embedded-opentype'), 
+    url('/schedule/font/todo-logo-for-lecture-Regular.woff2') format('woff2'), 
+    url('/schedule/font/todo-logo-for-lecture-Regular.woff') format('woff'), 
+    url('/schedule/font/todo-logo-for-lecture-Regular.ttf') format('truetype');
+    }
+
+.ma { 
+    display: inline-block; 
+    font: normal normal normal 14px/1 todo-logo-for-lecture; 
+    font-size: inherit; 
+    text-rendering: auto; 
+} 
+    
+.ma-logo:before { content: "\0530";}
+.ma-logo2:before { content: "\0532";}
+
+

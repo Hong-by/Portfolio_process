@@ -1,0 +1,68 @@
+@media screen and (max-width: 1280px){
+  .dashboard{flex-wrap: wrap;}
+
+  /* Header Contents Style Code */
+  header{width: 100%; height: 10%; flex-direction: row; padding: 0px 30px;}
+  header .gnb{display: flex; justify-content: center; }
+  header .gnb a{padding: 0 15px;}
+
+  /* Graph-ui Contents Style Code */
+  .graph-ui{height: calc(90% - 10px); margin-top: 10px; width: calc(60% - 20px); padding: 0;}
+
+  
+/* Table-ui Contents Style Code */
+  .table-ui{height: calc(90% - 10px); margin-top: 10px; width: 40%; padding: 0;}
+}
+
+@media screen and (max-width: 950px){
+  /* Graph-ui Contents Style Code */
+  .graph-ui>div.each-pofol{height: 26%;}
+  .graph-ui>div.total-pofol{height: 40%;}
+
+}
+
+@media screen and (max-width: 768px){
+  .wrapper{display: block; height: auto; min-height: auto;}
+
+  .dashboard{width: 100%; height: 100%; border-radius: 0;}
+
+  /* Header Style Code */
+  header{padding: 15px;}
+
+  /* Graph-ui Contents Style Code */
+  .graph-ui{height: auto; margin-top: 10px; width: 100%;}
+  .graph-ui>div{height: auto;}
+  .graph-ui>div.each-pofol{height: auto;}
+  .graph-ui .each-pofol .each-title{height: auto; padding: 10px 0 10px 5px;}
+  .graph-ui .each-pofol .each-graph{height: auto;}
+  .graph-ui .each-pofol .each-graph div{height: 120px;}
+
+  .graph-ui>div.total-pofol{height: 250px;}
+
+  
+  /* Table-ui Contents Style Code */
+  .table-ui{height: auto; margin-top: 10px; width: 100%;}
+
+}
+
+@media screen and (max-width: 400px){
+  /* Header Style Code */
+  header h2{width: 20px;}
+  header .gnb{display: none;}
+  header .sign-out{display: none;}
+
+  /* Mobile Menu Icon Style Code */
+  .mobile-menu{display: block;}
+
+  /* Graph-ui Contents Style Code */
+  .graph-ui div.intro .slide-box{padding: 20px 50px; _text-align: center; align-items: center;}
+  .graph-ui div.intro h2{font-size: 18px;}
+  .graph-ui div.intro p{display: none;}
+  /* .graph-ui div.intro a{} */
+
+  .graph-ui .each-pofol .each-graph{flex-wrap: wrap;}
+  .graph-ui .each-pofol .each-graph div{width: calc(50% - 5px); margin-top: 10px;}
+
+
+
+}

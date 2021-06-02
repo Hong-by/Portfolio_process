@@ -1,3 +1,26 @@
+@font-face { 
+  font-family: 'todo-logo-for-lecture'; 
+  src: url('/schedule/font/font/todo-logo-for-lecture-Regular.eot') format('embedded-opentype'), 
+  url('/schedule/font/font/todo-logo-for-lecture-Regular.woff2') format('woff2'), 
+  url('/schedule/font/font/todo-logo-for-lecture-Regular.woff') format('woff'), 
+  url('/schedule/font/font/todo-logo-for-lecture-Regular.ttf') format('truetype');
+}
+
+.custom-font { 
+  display: inline-block; 
+  _font: normal normal normal 14px/1 todo-logo-for-lecture; 
+  font-family: todo-logo-for-lecture;
+  font-size: 80px; 
+  line-height: 0;
+  text-rendering: auto;
+  font-style: normal;
+  font-weight: normal;
+
+}
+
+.custom-font:before { content: "\0530";}
+
+
 /* Wrapper Style Code */
 .wrapper{width: 100%; height: 100vh; min-height: 768px; background: #eee; display: flex; align-items: center; justify-content: center;}
 
@@ -14,15 +37,37 @@ header .gnb{width: 100%;}
 header .gnb a{width: 100%; padding: 15px 0; font-size: 20px; display: flex; justify-content: center; align-items: center;} 
 header .sign-out{font-size: 20px;}
 
+/* Mobile Menu Icon Style Code */
+.mobile-menu{width: 20px; height: 20px; position: relative; transition: all 0.4s; display: none;}
+.mobile-menu span{background: #fff; display: block; position: absolute;}
+.mobile-menu span:nth-child(1){width: 100%; height: 2px; top: 50%; transform: translateY(-50%);}
+.mobile-menu span:nth-child(2){width: 2px; height: 100%; left: 50%; transform: translateX(-50%);}
+.mobile-menu.active{transform: rotate(135deg);}
+
+
 /* Graph-ui Contents Style Code */
 .graph-ui{width: calc(55% - 20px); height: 100%; padding: 10px;}
 .graph-ui>div{width: 100%; height: 33.33%; border-radius: 15px;}
-.graph-ui>div.intro{background: #ff9062; padding: 40px; display: flex; flex-direction: column; justify-content: center; color: #fff; position: relative; overflow: hidden;}
-.graph-ui>div.intro h2{font-size: 28px; text-transform: uppercase; transform: translateY(25px); opacity: 0; animation: fade-up-01 0.5s 1; animation-fill-mode: forwards;}
-.graph-ui>div.intro p{transform: translateY(25px); opacity: 0; animation: fade-up-01 0.5s 1; animation-fill-mode: forwards; animation-delay: 0.5s;}
-.graph-ui>div.intro a{color: #fff; border: 1px solid #fff; width: 100px; text-align: center; padding: 7px 0; margin: 10px; transition: all 0.4s; font-size: 12px; transform: translateY(25px); opacity: 0; animation: fade-up-01 0.5s 1; animation-fill-mode: forwards; animation-delay: 1s;}
-.graph-ui>div.intro a:hover{background: #fff; color: #ff9062;}
-.graph-ui>div.intro i{position: absolute; font-size: 150px; right: -20px; top: -5px; opacity: 0.3;}
+.graph-ui div.intro{ color: #fff; position: relative; overflow: hidden; height: 100%!important;}
+
+.graph-ui div.intro .slide-box{padding: 40px 50px; height: 100%; display: flex; flex-direction: column; justify-content: center; position: relative;}
+.graph-ui div.intro .slide-box:nth-child(2){background: #ff9062;}
+.graph-ui div.intro .slide-box:nth-child(3){background: #7c41f5;}
+.graph-ui div.intro .slide-box:nth-child(4){background: #3acbe8;}
+.graph-ui div.intro .slide-box:nth-child(5){background: magenta;}
+
+
+.graph-ui div.intro h2{font-size: 28px; text-transform: uppercase; transform: translateY(25px); opacity: 0; }
+.graph-ui div.intro p{transform: translateY(25px); opacity: 0; }
+.graph-ui div.intro a{color: #fff; border: 1px solid #fff; width: 100px; text-align: center; padding: 7px 0; margin: 10px; transition: all 0.4s; font-size: 12px; transform: translateY(25px); opacity: 0; }
+.graph-ui div.intro a:hover{background: #fff; color: #ff9062;}
+.graph-ui div.intro i{position: absolute; font-size: 150px; right: -20px; top: -5px; opacity: 0.3;}
+
+.graph-ui div.intro .slide-box.active h2{animation: fade-up-01 0.5s 1; animation-fill-mode: forwards; animation-delay: 0.3s;}
+.graph-ui div.intro .slide-box.active p{animation: fade-up-01 0.5s 1; animation-fill-mode: forwards; animation-delay: 0.8s;}
+.graph-ui div.intro .slide-box.active a{animation: fade-up-01 0.5s 1; animation-fill-mode: forwards; animation-delay: 1.3s;}
+
+
 
 .graph-ui>div.each-pofol{padding: 20px 0;}
 .graph-ui>div.each-pofol>div{width: 100%; height: 100%; border-radius: 15px;}
