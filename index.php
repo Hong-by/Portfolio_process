@@ -95,25 +95,43 @@
               <span class="chart" data-percent="86">
                 <span class="percent"></span>
               </span>
+              <b>DB Project</b>
+              <i class="fa fa-database"></i>
             </div>
             <div class="api-pofol">
               <span class="chart" data-percent="60">
                 <span class="percent"></span>
               </span>
+              <b>API Project</b>
+              <i class="fa fa-thermometer-half"></i>
             </div>
             <div class="renewal-pofol">
               <span class="chart" data-percent="40">
                 <span class="percent"></span>
               </span>
+              <b>Renewal Project</b>
+              <i class="fa fa-clone"></i>
             </div>
             <div class="planning-pofol">
               <span class="chart" data-percent="15">
                 <span class="percent"></span>
               </span>
+              <b>Planning Project</b>
+              <i class="fa fa-bar-chart-o"></i>
             </div>
           </div>
         </div>
-        <div class="total-pofol"></div>
+        <div class="total-pofol">
+          <div class="total-chart">
+            <span class="chart" data-percent="15">
+              <span class="percent"></span>
+              <h3>Total Process Rate</h3>
+            </span>
+          </div>
+          <div class="total-txt">
+
+          </div>
+        </div>
       </section>
 
       <section class="table-ui">
@@ -182,52 +200,19 @@
     </div>
     <!--End of Main Dashboard Frame -->
   </div>
+
+  <!-- Jquery Framework Load -->
   <script
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
-
+  <!-- Plugins Load -->
   <script src="/schedule/lib/js/lightslider.js"></script>
   <script src="/schedule/lib/js/easypiechart.js"></script>
+  <!-- Vanilla Js Code Load -->
   <script src="/schedule/js/index.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".intro").lightSlider({
-        item:1,
-        pager:false,
-        loop:true,
-        slideMargin: 0,
-        speed: 400,
-        auto:true,
-        pause: 7000,
-        mode:'fade',
-        adaptiveHeight:true,
-      }); 
-    });
-  </script>
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
+  <!-- jQuery Code Load -->
+  <script src="/schedule/js/jquery.index.js"></script>
 
-        function startPie(a, b, c){
-          var chart = window.chart = new EasyPieChart(document.querySelector(a + ' .chart'), {
-          easing: 'easeOutElastic',
-          delay: 3000,
-          barColor: b,
-          trackColor: c,
-          scaleColor: false,
-          lineWidth: 10,
-          trackWidth: 8,
-          lineCap: 'round',
-            onStep: function(from, to, percent) {
-              this.el.children[0].innerHTML = Math.round(percent);
-            }
-          });
-        }
-        startPie('.db-pofol', '#7c41f5', '#c1a3ff');
-        startPie('.api-pofol', '#ff9062', '#fcbca2');
-        startPie('.renewal-pofol', '#3acbe8', '#91edff');
-        startPie('.planning-pofol', '#69c', '#ace');
-      });
-  </script>
 </body>
 </html>
