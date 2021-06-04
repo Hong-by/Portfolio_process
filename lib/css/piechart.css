@@ -6,14 +6,14 @@
   _margin-top: 50px;
   _margin-bottom: 50px;
   text-align: center;
+  padding: 5px;
 }
 .chart canvas {
   position: absolute;
-  top: 0;
-  left: 0;
-  _width: 90%!important;
-  
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
 }
 .percent {
   height: 100%;

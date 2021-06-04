@@ -21,11 +21,13 @@
 
   /* Pie Chart Style Code */
   .chart{width: 100%; height: 100%;}
-  .chart canvas{width: auto!important; height: 100%!important; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 5px;}
+  .chart canvas{_width: 85%!important; _height: auto!important; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 5px;}
 
 
   .graph-ui .each-pofol .each-graph div b{display: none;}
   .graph-ui .each-pofol .each-graph div i{display: block;}
+
+  div.total-txt{width: 50%;}
 
 }
 
@@ -51,8 +53,15 @@
   /* Table-ui Contents Style Code */
   .table-ui{height: auto; margin-top: 10px; width: 100%;}
 
+  div.total-txt{padding: 30px;}
+  div.total-txt h3{font-size: 16px;}
+  div.total-txt p{font-size: 14px;}
+  div.total-txt button{font-size: 12px;}
+
   .chart{width: 100%; height: 100%;}
-  .chart canvas{width: auto!important; height: 75%!important; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+  .chart canvas{_width: auto!important; _height: 75%!important; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+
 
 }
 
@@ -74,6 +83,9 @@
   .graph-ui .each-pofol .each-graph{flex-wrap: wrap;}
   .graph-ui .each-pofol .each-graph div{width: calc(50% - 5px); margin-top: 10px;}
 
-
+  .graph-ui>div.total-pofol{height: 350px; display: block;}
+  .graph-ui>div.total-pofol div.total-chart,
+  .graph-ui>div.total-pofol div.total-txt{width: 100%; height: 50%; padding: 0 5px; text-align: center;}
+  .graph-ui>div.total-pofol div.total-txt button{width: 80%; margin: 10px auto;}
 
 }
