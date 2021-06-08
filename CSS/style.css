@@ -47,7 +47,7 @@ header .sign-out{font-size: 20px;}
 .mobile-menu.active{transform: rotate(135deg);}
 
 
-/* Graph-ui Contents Style Code */
+/* Main Page Graph-ui Contents Style Code */
 .graph-ui{width: calc(55% - 20px); height: 100%; padding: 10px;}
 .graph-ui>div{width: 100%; height: 33.33%; border-radius: 15px;}
 .graph-ui div.intro{ color: #fff; position: relative; overflow: hidden; height: 100%!important;}
@@ -109,7 +109,8 @@ div.total-txt button:hover{background: #7c41f5; color: #fff;}
 /* Table-ui Contents Style Code */
 .table-ui{width: 35%; height: 100%; padding: 10px 0; display: flex; flex-direction: column; justify-content: space-between;}
 
-.table-ui>div{width: 100%; height: calc(50% - 5px); border-radius: 15px; border: 1px solid #f7f7f7; box-shadow: 0px 0px 3px #ccc; background: #fff; padding: 30px 20px;}
+.table-ui>div{width: 100%; height: calc(50% - 5px); border-radius: 15px; border: 1px solid #f7f7f7; box-shadow: 0px 0px 3px #ccc; background: #fff; padding: 30px 20px; overflow: hidden; overflow-y: auto;}
+.table-ui>div::-webkit-scrollbar{display: none;}
 /* .table-ui>div.each-project{margin-top: 10px;} */
 
 /* New-update Style Code */
@@ -132,6 +133,24 @@ div.total-txt button:hover{background: #7c41f5; color: #fff;}
 /* .table-ui .new-update .con-txt p a:hover{text-decoration: underline; display: block;} */
 .table-ui .con-txt em{font-style: normal; font-size: 12px;}
 
-.table-ui .each-project .each-btns button{width: 25%; border: 1px solid #fff; background: #ff9062; color: #fff; padding: 10px 0; font-weight: 400;}
+.table-ui .each-project .each-btns a{width: 25%; border: 1px solid #fff; background: #ff9062; color: #fff; padding: 10px 0; font-weight: 400; text-align: center; border-radius: 5px;}
 
-.table-ui .each-project .each-btns button.active{color: #333; background: #fff; border: 1px solid #ff9062; color: #ff9062;}
+.table-ui .each-project .each-btns a.active{color: #333; background: #fff; border: 1px solid #ff9062; color: #ff9062;}
+
+
+/* Insert Form Page Graph-ui Contents Style Code */
+.graph-ui>div.input-box{width: 100%; height: calc(66.66% - 10px); border-radius: 15px; border: 1px solid #f7f7f7; box-shadow: 0px 0px 3px #ccc; background: #fff; display: flex; margin-top: 10px; flex-direction: column; padding: 20px;}
+
+.graph-ui .title-box{width: 100%; height: auto;}
+.graph-ui .title-box h3{font-size: 20px; font-weight: 400; padding-bottom: 10px; color: #555; border-bottom: 1px solid #ccc; margin-bottom: 10px;}
+
+.graph-ui .input-box .input-tit{display: flex; justify-content: space-between;}
+.graph-ui .input-box .input-tit input{width: calc(65% - 10px); padding: 10px; border: 1px solid #ccc; outline: 0; border-radius: 10px 0 0 10px;}
+.graph-ui .input-box .input-tit input:focus{border: 1px solid #7c41f5;}
+.graph-ui .input-box .input-tit select{width: 35%; border: 1px solid #ccc; outline: 0; border-radius: 0 10px 10px 0; color: #333;}
+.graph-ui .input-box .input-tit select:focus{border: 1px solid #7c41f5;}
+.graph-ui .input-con textarea{width: 100%; border: 1px solid #ccc; outline: 0; padding: 10px; height: 250px; border-radius: 10px; margin-top: 10px; resize: none; color: #333; font-family: 'Roboto', 'Noto Sans KR', sans-serif;}
+.graph-ui .input-con textarea:focus{border: 1px solid #7c41f5;}
+.graph-ui .btns{width: 100%; height: auto; text-align: center; margin-top: 10px;}
+.graph-ui .btns button{border: 1px solid #7c41f5; outline: 0; background: #7c41f5; color: #fff; padding: 10px 20px; transition: all 0.4s;}
+.graph-ui .btns button:hover{background: #fff; color: #7c41f5;}

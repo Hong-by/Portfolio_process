@@ -110,83 +110,17 @@
             </div>
           </div>
         </div>
-        <div class="total-pofol">
-          <div class="total-chart">
-            <span class="chart" data-percent="15">
-              <span class="percent"></span>
-              <!-- <h3>Total Process Rate</h3> -->
-            </span>
-          </div>
-          <div class="total-txt">
-            <h3>Total Process Rate</h3>
-            <p>Your process rate is very low...<br> Plz Hurry Up!!</p>
-            <button>Update Rate</button>
-          </div>
-        </div>
+
+        <?php
+        include $_SERVER['DOCUMENT_ROOT']."/schedule/include/total-pofol.php";
+        ?>
+
       </section>
 
-      <section class="table-ui">
-        <div class="new-update">
-          <div class="tit-box">
-            <p>Recent Update</p>
-            <a href="#">More</a>
-          </div>
-          <ul class="con-details">
-            <li>
-              <i class="fa fa-database"></i>
-              <div class="con-txt">
-                <p><a href="#">데이터베이스 테이블 설계 완료</a></p>
-                <em>2021-05-31</em>
-              </div>
-            </li>
-            <li>
-              <i class="fa fa-database"></i>
-              <div class="con-txt">
-                <p><a href="#">데이터베이스 테이블 설계 완료</a></p>
-                <em>2021-05-31</em>
-              </div>
-            </li>
-            <li>
-              <i class="fa fa-database"></i>
-              <div class="con-txt">
-                <p><a href="#">데이터베이스 테이블 설계 완료</a></p>
-                <em>2021-05-31</em>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="each-project">
-          <div class="each-btns">
-            <button class="active">Database</button>
-            <button>API</button>
-            <button>Renewal</button>
-            <button>Planning</button>
-          </div>
-          <ul class="con-details">
-            <li>
-              <i class="fa fa-database"></i>
-              <div class="con-txt">
-                <p><a href="#">데이터베이스 테이블 설계 완료</a></p>
-                <em>2021-05-31</em>
-              </div>
-            </li>
-            <li>
-              <i class="fa fa-database"></i>
-              <div class="con-txt">
-                <p><a href="#">데이터베이스 테이블 설계 완료</a></p>
-                <em>2021-05-31</em>
-              </div>
-            </li>
-            <li>
-              <i class="fa fa-database"></i>
-              <div class="con-txt">
-                <p><a href="#">데이터베이스 테이블 설계 완료</a></p>
-                <em>2021-05-31</em>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <!-- Table Contents on Right side -->
+      <?php
+        include $_SERVER['DOCUMENT_ROOT']."/schedule/include/table-ui.php";
+      ?>
 
     </div>
     <!--End of Main Dashboard Frame -->

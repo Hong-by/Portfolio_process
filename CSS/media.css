@@ -12,6 +12,9 @@
   
 /* Table-ui Contents Style Code */
   .table-ui{height: calc(90% - 10px); margin-top: 10px; width: 40%; padding: 0;}
+
+  /* Insert Form Page Style Code */
+  .graph-ui .input-con textarea{height: 200px;}
 }
 
 @media screen and (max-width: 950px){
@@ -28,6 +31,10 @@
   .graph-ui .each-pofol .each-graph div i{display: block;}
 
   div.total-txt{width: 50%;}
+
+    /* Insert Form Page Style Code */
+    .graph-ui>div.input-box{height: calc(60% - 10px);}
+    .graph-ui .input-con textarea{height: 180px;}
 
 }
 
@@ -87,5 +94,13 @@
   .graph-ui>div.total-pofol div.total-chart,
   .graph-ui>div.total-pofol div.total-txt{width: 100%; height: 50%; padding: 0 5px; text-align: center;}
   .graph-ui>div.total-pofol div.total-txt button{width: 80%; margin: 10px auto;}
+
+  /* Insert Form Page Style Code */
+  .graph-ui>div.input-box{padding: 10px;}
+  .graph-ui .title-box h3{font-size: 16px;}
+  .graph-ui .title-box .input-tit input{font-size: 12px;}
+  .graph-ui .title-box .input-tit select{font-size: 12px;}
+  .graph-ui .title-con textarea{font-size: 12px;}
+  .graph-ui .btns button{font-size: 12px; padding: 8px 15px;}
 
 }
