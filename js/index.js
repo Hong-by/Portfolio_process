@@ -147,5 +147,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-const abc = window.innerHeight;
-console.log(abc);
+//Open Modal for Input Rates
+//1. 버튼 DOM 저장 => index.php 137번째 줄
+const modalbtn = document.querySelector('#open-modal');
+
+const modal = document.querySelector('#myModal');
+const span = document.querySelector('.close');
+const times = document.querySelector('#times');
+
+modalbtn.onclick = function(){
+  modal.style.display = "block";
+}
+
+// times.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// window.onclick = function(){
+//   if(event.target == modal){
+//     modal.style.display = "none";
+//   }
+// }

@@ -36,6 +36,10 @@
     .graph-ui>div.input-box{height: calc(60% - 10px);}
     .graph-ui .input-con textarea{height: 180px;}
 
+  /* Modal Contents Style Code */
+  .modal-content .rate-form{flex-wrap: wrap;}
+  .modal-content .rate-form p{width: 50%; margin-top: 5px;}
+
 }
 
 @media screen and (max-width: 768px){
@@ -68,6 +72,8 @@
   .chart{width: 100%; height: 100%;}
   .chart canvas{_width: auto!important; _height: 75%!important; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
+ /* Modal Contents Style Code */
+ .modal-content .rate-form p{width: 100%;}
 
 
 }
@@ -103,4 +109,9 @@
   .graph-ui .title-con textarea{font-size: 12px;}
   .graph-ui .btns button{font-size: 12px; padding: 8px 15px;}
 
+   /* Modal Contents Style Code */
+ .modal-content{width: 95%; margin: 40% auto;}
+ .modal-content .rate-form p label{font-size: 12px;}
+
+ #updateBtn{font-size: 12px;}
 }
