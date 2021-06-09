@@ -89,7 +89,7 @@
             <h3>Each Portfolio Process Rate</h3>
           </div>
           <div class="each-graph">
-            <div class="db-pofol">
+            <!--<div class="db-pofol">
               <span class="chart" data-percent="86">
                 <span class="percent"></span>
               </span>
@@ -116,7 +116,7 @@
               </span>
               <b>Planning Project</b>
               <i class="fa fa-bar-chart-o"></i>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -141,22 +141,9 @@
         <!-- <span class="close" id="times">&times;</span> -->
         <!-- <p>Some text in the Modal....</p> -->
         <form action="/schedule/php/sp_rate_insert.php" class="rate-form" name="rate_form">
-          <p>
-            <label for="db-pro">DB Project</label>
-            <input type="text" id="db-pro" value="86" name = "db_pro">
-          </p>
-          <p>
-            <label for="api-pro">API Project</label>
-            <input type="text" id="api-pro" value="60" name = "api_pro">
-          </p>
-          <p>
-            <label for="ren-pro">Renewal Project</label>
-            <input type="text" id="ren-pro" value="40" name = "ren_pro">
-          </p>
-          <p>
-            <label for="pl-pro">Planning Project</label>
-            <input type="text" id="pl-pro"value="15" name = "pl_pro">
-          </p>
+          
+
+
         </form>
         <div class="updateBtnBox">
           <button type="button" id="updateBtn">Update Rate</button>
@@ -164,9 +151,11 @@
       </div>
       <script>
         const updateBtn = document.querySelector('#updateBtn');
+        // const modal = document.querySelector('#myModal');
         updateBtn.onclick = function() {
           //alert('abc');
           document.rate_form.submit();
+          // modal.style.display = "none";
         }
       </script>
 
@@ -178,13 +167,15 @@
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
-  <!-- Plugins Load -->
+  // <!-- Plugins Load -->
   <script src="/schedule/lib/js/lightslider.js"></script>
-  <script src="/schedule/lib/js/easypiechart.js"></script>
-  <!-- Vanilla Js Code Load -->
+  <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
+  // <!-- Vanilla Js Code Load -->
   <script src="/schedule/js/index.js"></script>
-  <!-- jQuery Code Load -->
+  // <!-- jQuery Code Load -->
   <script src="/schedule/js/jquery.index.js"></script>
+  <script src="/schedule/js/modalAjax.js"></script>
+  <script src="/schedule/js/total_avg.js"></script>
 
 </body>
 </html>
