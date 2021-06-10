@@ -111,11 +111,12 @@
   crossorigin="anonymous"></script>
   <!-- Plugins Load -->
   <script src="/schedule/lib/js/lightslider.js"></script>
-  <script src="/schedule/lib/js/easypiechart.js"></script>
+  <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
   <!-- Vanilla Js Code Load -->
   <script src="/schedule/js/index.js"></script>
   <!-- jQuery Code Load -->
   <script src="/schedule/js/jquery.index.js"></script>
+  <script src="/schedule/js/total_avg.js"></script>
 
 </body>
 </html>

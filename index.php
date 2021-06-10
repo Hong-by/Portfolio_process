@@ -167,12 +167,12 @@
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
-  // <!-- Plugins Load -->
+  <!-- Plugins Load -->
   <script src="/schedule/lib/js/lightslider.js"></script>
   <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
-  // <!-- Vanilla Js Code Load -->
+  <!-- Vanilla Js Code Load -->
   <script src="/schedule/js/index.js"></script>
-  // <!-- jQuery Code Load -->
+ <!-- jQuery Code Load -->
   <script src="/schedule/js/jquery.index.js"></script>
   <script src="/schedule/js/modalAjax.js"></script>
   <script src="/schedule/js/total_avg.js"></script>

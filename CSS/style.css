@@ -168,5 +168,34 @@ div.total-txt button:hover{background: #7c41f5; color: #fff;}
 
 #updateBtn{display: block; margin: 15px auto 0; border-radius: 3px;}
 
-.close{color: #aaa; float: right; font-size: 28px; font-weight: bold;}
-.close:hover, .close:focus{color: black; text-decoration: none; cursor: pointer;}
+/* Detail Page Style Code */
+.graph-ui.detail{width: calc(90% - 10px); display: flex; justify-content: space-between; flex-wrap: wrap; align-content: space-between; padding: 0;}
+.graph-ui.detail .total-pofol{height: 40%; width: calc(60% - 10px);}
+.graph-ui.detail .each-pofol{height: 40%; width: 40%; padding: 0;}
+.graph-ui.detail .each-pofol .each-graph{flex-wrap: wrap; height: 100%; align-items: center; justify-content: space-between; align-content: space-between;}
+.graph-ui.detail .each-pofol .each-graph div{height: calc(50% - 5px); width: calc(50% - 5px);}
+.graph-ui.detail .each-pofol .each-graph div b{display: none;}
+.graph-ui.detail .each-pofol .each-graph div i{display: block;}
+
+.graph-ui.detail .detail-board{width: 100%; height: calc(60% - 10px); background: #fff; border: 1px solid #f7f7f7; border-radius: 15px; box-shadow: 0px 0px 3px #ccc; padding: 30px 20px; overflow: auto;}
+.graph-ui.detail .detail-board::-webkit-scrollbar{display: none;}
+.detail-board .board-btns{width: 100%; height: auto; display: flex;}
+.detail-board .board-btns a{background: #ff9062; display: block; padding: 8px 15px; border: 1px solid #ff9062; color: #fff; border-radius: 3px; margin: 0px 1px; transition: all 0.4s;}
+.detail-board .board-btns a:hover{background: #fff; color: #ff9062;}
+
+.board-table{width: 100%; height: auto; margin: 10px 0;}
+.board-table ul{width: 100%; height: auto; display: flex; flex-direction: column;}
+.board-table li{width: 100%; text-align: center; display: flex;}
+.board-table li span{padding: 5px 0; display: flex; align-content: center; justify-content: center;}
+.board-table li.board-title span{background: #ff9062; color: #fff; border: 1px solid #fff; }
+.board-table li span:nth-child(1){width: 10%;}
+.board-table li span:nth-child(2){width: 20%;}
+.board-table li span:nth-child(3){width: 40%;}
+.board-table li span:nth-child(4){width: 20%;}
+.board-table li span:nth-child(5){width: 10%;}
+.board-table li.board-contents{border-bottom: 1px solid #f0f0f0;}
+.board-table li.board-contents span{color: #555; padding: 5px 10px;}
+.board-table li.board-contents span:nth-child(3){text-align: left; justify-content: left;}
+.board-table li.board-contents span a{color: #555;}
+.board-table li.board-contents span a:hover{text-decoration: underline;}
+.board-table li.board-contents span .del-btn{border: none; background: #ff9062; color: #fff; padding: 3px 10px; font-size: 12px; text-decoration: none;}
