@@ -39,8 +39,8 @@
   <script defer>
     const hostname = window.location.href;
     console.log(hostname);
-    if (hostname == 'http://localhost/schedule/') {
-      window.location.replace('http://localhost/schedule/index.php?key=database');
+    if (hostname == 'http://hby033.dothome.co.kr/schedule/') {
+      window.location.replace('http://hby033.dothome.co.kr/schedule/index.php?key=database');
     }
   </script>
 

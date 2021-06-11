@@ -1,3 +1,6 @@
+
+
+
 //Cutting Contants Text
 
 const conTxt = document.querySelectorAll('.con-txt p a');
@@ -158,7 +161,7 @@ $(function(){
 const modalbtn = document.querySelector('#open-modal');
 
 const modal = document.querySelector('#myModal');
-const span = document.querySelector('.close');
+// const span = document.querySelector('.close');
 const times = document.querySelector('#times');
 
 modalbtn.onclick = function(){
@@ -169,8 +172,8 @@ modalbtn.onclick = function(){
 //   modal.style.display = "none";
 // }
 
-// window.onclick = function(){
-//   if(event.target == modal){
-//     modal.style.display = "none";
-//   }
-// }
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

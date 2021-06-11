@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schedule Insert</title>
 
-  <!-- Favicon link -->
-  <link rel="shortcut icon" href="/schedule/images/favicon.ico" type="image/x-icon">
+   <!-- Favicon link -->
+   <link rel="shortcut icon" href="/schedule/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/schedule/images/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/schedule/images/favicon.ico">
 
@@ -101,6 +101,33 @@
       ?>
 
     </div>
+    
+  <!-- 2. 모달 박스 UI 제작 => style.css 160번째 줄  -->
+  <div class="modal" id="myModal">
+      <div class="modal-content">
+        <!-- <span class="close" id="times">&times;</span> -->
+        <!-- <p>Some text in the Modal....</p> -->
+        <form action="/schedule/php/sp_rate_insert.php" class="rate-form" name="rate_form">
+          
+
+
+        </form>
+        <div class="updateBtnBox">
+          <button type="button" id="updateBtn">Update Rate</button>
+        </div>
+      </div>
+      <script>
+        const updateBtn = document.querySelector('#updateBtn');
+        // const modal = document.querySelector('#myModal');
+        updateBtn.onclick = function() {
+          //alert('abc');
+          document.rate_form.submit();
+          // modal.style.display = "none";
+        }
+      </script>
+
+    </div>
+  </div>
     <!-- End of Main Dashboard Frame -->
   </div>
 
@@ -114,8 +141,9 @@
   <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
   <!-- Vanilla Js Code Load -->
   <script src="/schedule/js/index.js"></script>
-  <!-- jQuery Code Load -->
+ <!-- jQuery Code Load -->
   <script src="/schedule/js/jquery.index.js"></script>
+  <script src="/schedule/js/modalAjax.js"></script>
   <script src="/schedule/js/total_avg.js"></script>
 
 </body>

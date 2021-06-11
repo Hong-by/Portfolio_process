@@ -1,3 +1,5 @@
+<meta charset="UTF-8">
+
 <?php
 
   $spInputTit = addslashes($_POST['spInputTit']);
