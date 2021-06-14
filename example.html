@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <div id="jsonData"></div>
+
+  <div class="btns">
+    <button value="database">데이터베이스</button>
+    <button value="thermometer-half">API</button>
+    <button value="clone">리뉴얼</button>
+    <button value="bar-chart-o">기획</button>
+  </div>
+
+
+  <script>
+
+    function reqListener() {
+      // console.log(this.responseText);
+      const jsonObj = JSON.parse(this.responseText);
+      //json에서 받아온 값을 파싱 시킨다. responseText 의 값을
+      const jsonDom = document.querySelector('#jsonData')
+      // console.log(jsonObj);
+      // console.log(jsonDom);
+
+      function abc(n) {
+        //console.log("abc");
+        //console.log(jsonObj);
+
+        //  for(let i = 0; i < jsonObj.length; i++){
+        //    console.log(jsonObj[i]);
+        //  }
+        //jsonObj.forEach(elements => {});
+        // jsonObj.forEach(function(elements){
+        //   console.log(elements);
+        const result = jsonObj.filter(value => {
+          return value.sp_cate == n;
+          // value == "database"
+        });
+       
+        // console.log(result);
+
+        for(let i = 0; i < result.length; i++){
+          // console.log(result[i].sp_idx);
+          jsonDom.innerHTML +=
+          `
+          <p>${result[i].sp_idx}</p>
+          <p>${result[i].sp_cate}</p>
+          <p>${result[i].sp_tit}</p>
+          `
+        };
+      };
+      
+      const btns = document.querySelectorAll('.btns button');
+      console.log(btns);
+
+      btns.forEach(value => {
+        console.log(value);
+        value.addEventListener('click', function(){
+          jsonDom.innerHTML = "";
+          // console.log(this.getAttribute('value'));
+          const itemVal = this.getAttribute('value');
+          abc(itemVal);
+        });
+      });
+    };
+    
+
+
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", "/schedule/php/read_table_json.php");
+    oReq.send();
+
+
+
+  </script>
+
+
+
+</body>
+</html>
