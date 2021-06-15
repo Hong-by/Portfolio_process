@@ -1,57 +1,128 @@
 <section class="table-ui">
-        <div class="new-update">
-          <div class="tit-box">
-            <p>Recent Update</p>
-            <a href="#">More</a>
+  <div class="new-update">
+    <div class="tit-box">
+      <p>Recent Update</p>
+      <a href="#">More</a>
+    </div>
+
+    <ul class="con-details">
+    <?php
+      include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
+      $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC LIMIT 5";
+      $ta_result = mysqli_query($dbConn, $sql);
+
+      if(!$ta_result){
+
+    ?>
+
+    <li>
+        <p>입력된 일정이 없습니다.</p>
+    </li>
+
+    <?php
+      } else {
+        while($ta_row = mysqli_fetch_array($ta_result)){
+          $ta_row_cate = $ta_row['SP_cate'];
+          $ta_row_tit = $ta_row['SP_tit'];
+          $ta_row_reg = $ta_row['SP_reg'];
+    ?>
+    <li>
+      <i class="fa fa-<?=$ta_row_cate?>"></i>
+      <div class="con-txt">
+        <p><a href="#"><?=$ta_row_tit?></a></p>
+        <em><?=$ta_row_reg?></em>
+      </div>
+    </li>
+    <?php
+        };
+      };
+    ?>
+    </ul>
+  </div>
+  <div class="each-project">
+    <div class="each-btns">
+      <button class="active" value="database">데이터베이스</button>
+      <button value="thermometer-half">API</button>
+      <button value="clone">리뉴얼</button>
+      <button value="bar-chart-o">기획</button>
+    </div>
+    <ul class="con-details" id="con-details">
+
+    </ul>
+  </div>
+</section>
+<script>
+
+  function reqListener() {
+    // console.log(this.responseText);
+    const jsonObj = JSON.parse(this.responseText);
+    //json에서 받아온 값을 파싱 시킨다. responseText 의 값을
+    const jsonDom = document.querySelector('#con-details')
+    // console.log(jsonObj);
+    // console.log(jsonDom);
+
+    function callTabs(n) {
+      //console.log("abc");
+      //console.log(jsonObj);
+
+      //  for(let i = 0; i < jsonObj.length; i++){
+      //    console.log(jsonObj[i]);
+      //  }
+      //jsonObj.forEach(elements => {});
+      // jsonObj.forEach(function(elements){
+      //   console.log(elements);
+      const result = jsonObj.filter(value => {
+        return value.sp_cate == n;
+        // value == "database"
+      });
+      
+      // console.log(result);
+
+      for(let i = 0; i < result.length; i++){
+        // console.log(result[i].sp_idx);
+        jsonDom.innerHTML +=
+        `
+        <li>
+          <i class="fa fa-${result[i].sp_cate}"></i>
+          <div class="con-txt">
+            <p><a href="#">${result[i].sp_tit}</a></p>
+            <em>${result[i].sp_reg}</em>
           </div>
+        </li>
+        `
+      };
+    };
+    
+    const btns = document.querySelectorAll('.each-btns button');
+    console.log(btns);
 
-          <ul class="con-details">
-          <?php
-            include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
-            $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC LIMIT 5";
-            $ta_result = mysqli_query($dbConn, $sql);
+    btns.forEach(value => {
+      console.log(value);
+      value.addEventListener('click', function(){
+        // console.log(value);
+        btns.forEach(btnItem => {
+          btnItem.className = "";
+        });
+        
 
-            if(!$ta_result){
+        this.className = "active";
+        jsonDom.innerHTML = "";
+        // console.log(this.getAttribute('value'));
+        const itemVal = this.getAttribute('value');
+        callTabs(itemVal);
+      });
+    });
+    callTabs("database");
+  };
+  
 
-          ?>
 
-          <li>
-              <p>입력된 일정이 없습니다.</p>
-          </li>
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", reqListener);
+  oReq.open("GET", "/schedule/php/read_table_json.php");
+  oReq.send();
 
-          <?php
-            } else {
-              while($ta_row = mysqli_fetch_array($ta_result)){
-                $ta_row_cate = $ta_row['SP_cate'];
-                $ta_row_tit = $ta_row['SP_tit'];
-                $ta_row_reg = $ta_row['SP_reg'];
-          ?>
-          <li>
-            <i class="fa fa-<?=$ta_row_cate?>"></i>
-            <div class="con-txt">
-              <p><a href="#"><?=$ta_row_tit?></a></p>
-              <em><?=$ta_row_reg?></em>
-            </div>
-          </li>
-          <?php
-              };
-            };
-          ?>
-          </ul>
-        </div>
-        <div class="each-project">
-          <div class="each-btns">
-            <a href="?key=database" class="active">Database</a>
-            <a href="?key=api">API</a>
-            <a href="?key=renewal">Renewal</a>
-            <a href="?key=planning">Planning</a>
-          </div>
-          <ul class="con-details">
-            <?php
-              $tab_path = $_GET['key'];
-              // echo $tab_path;
-              include $_SERVER["DOCUMENT_ROOT"].'/schedule/include/tabs/'.$tab_path.'.php';
-            ?>
-          </ul>
-        </div>
-      </section>
+
+
+
+</script>

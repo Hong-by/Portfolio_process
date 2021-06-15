@@ -41,7 +41,7 @@
     console.log(hostname);
     if (hostname == 'http://localhost/schedule/') {
       window.location.replace('http://localhost/schedule/index.php?key=database');
-    }
+    } 
   </script>
 
 </head>
@@ -69,11 +69,11 @@
 
         <div class="detail-board">
           <div class="board-btns">
-            <a href="#">All</a>
-            <a href="#">Database</a>
-            <a href="#">API</a>
-            <a href="#">Renewal</a>
-            <a href="#">Plannning</a>
+            <a href="?key=all" class="active">All</a>
+            <a href="?key=database">Database</a>
+            <a href="?key=api">API</a>
+            <a href="?key=renewal">Renewal</a>
+            <a href="?key=planning">Plannning</a>
           </div>
 
           <div class="board-table">
@@ -87,31 +87,26 @@
               </li>
 
               <?php
-                include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";//db 접속정보 로드
-                $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC";
-                $board_result = mysqli_query($dbConn, $sql);
-
-                while($board_row = mysqli_fetch_array($board_result)){
-                  $board_row_idx = $board_row['SP_idx'];
-                  $board_row_cate = $board_row['SP_cate'];
-                  $board_row_tit = $board_row['SP_tit'];
-                  $board_row_reg = $board_row['SP_reg'];
-
-              ?>
-
-              <li class="board-contents">
-                <span><?=$board_row_idx?></span>
-                <span><?=$board_row_cate?></span>
-                <span><a href="#"><?=$board_row_tit?></a></span>
-                <span><?=$board_row_reg?></span>
-                <span><a href="/schedule/php/sp_delete.php?del_idx=<?=$board_row_idx?>" class="del-btn">삭제</a></span>
-              </li>
-
-              <?php
-                }
+                $tabs_btn = $_GET['key'];
+                // echo $tabs_btn;
+                include $_SERVER["DOCUMENT_ROOT"].'/schedule/include/tabs/'.$tabs_btn.'.php';
               ?>
                     
             </ul>
+          </div>
+          <!-- End of board-table -->
+
+
+          <div class="board-table-btns">
+            <!-- <form action="#" class="search-box">
+              <select>
+                <option value="">아이디</option>
+                <option value="">제목</option>
+              </select>
+              <input type="text">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form> -->
+            <button type="button" class="more-btn">더보기</button>
           </div>
         </div>
 
@@ -138,6 +133,28 @@
   <script src="/schedule/js/jquery.index.js"></script>
   <script src="/schedule/js/modalAjax.js"></script>
   <script src="/schedule/js/total_avg.js"></script>
+
+  <script>
+    $(function(){
+      //더보기 버튼 기능
+      $(".board-contents").hide();
+      $(".board-contents").slice(0, 5).show();
+
+      $(".more-btn").click(function(){
+        // console.log($(".board-contents:hidden").length);
+        $(".board-contents:hidden").slice(0,5).show();
+      });
+
+      //테이블 탭 활성화 기능
+      // $(".detail-board a").click(function(){
+      //   const tabIdx = $(this).index();
+      //   // alert(tabIdx);
+      //   $(".detail-board a").removeClass('active');
+      //   tabIdx.addClass('active');
+      // });
+
+    });
+  </script>
 
 </body>
 </html>
