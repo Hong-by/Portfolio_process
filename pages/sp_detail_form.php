@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Insert</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Process</title>
 
   <!-- Favicon link -->
@@ -39,8 +44,8 @@
   <script defer>
     const hostname = window.location.href;
     console.log(hostname);
-    if (hostname == 'http://localhost/schedule/') {
-      window.location.replace('http://localhost/schedule/index.php?key=database');
+    if (hostname == 'http://localhost/schedule/pages/sp_detail_form.php') {
+      window.location.replace('http://localhost/schedule/pages/sp_detail_form.php?key=all');
     } 
   </script>
 
@@ -115,7 +120,32 @@
 
     <!--End of Main Dashboard Frame -->
   </div>
+    <!-- 2. 모달 박스 UI 제작 => style.css 160번째 줄  -->
+  <div class="modal" id="myModal">
+      <div class="modal-content">
+        <!-- <span class="close" id="times">&times;</span> -->
+        <!-- <p>Some text in the Modal....</p> -->
+        <form action="/schedule/php/sp_rate_insert.php" class="rate-form" name="rate_form">
+          
 
+
+        </form>
+        <div class="updateBtnBox">
+          <button type="button" id="updateBtn">Update Rate</button>
+        </div>
+      </div>
+      <script>
+        const updateBtn = document.querySelector('#updateBtn');
+        // const modal = document.querySelector('#myModal');
+        updateBtn.onclick = function() {
+          //alert('abc');
+          document.rate_form.submit();
+          // modal.style.display = "none";
+        };
+      </script>
+
+    </div>
+  </div>
  
 
 
@@ -155,6 +185,42 @@
 
     });
   </script>
+  <script>
+    const pathName = window.location.href;
+    const tabBtns = document.querySelectorAll('.board-btns a');
+    const tabElements = ['all', 'database', 'api', 'renewal', 'planning'];
+    // console.log(tabBtns);
+
+    for(let i = 0; i < tabBtns.length; i++){
+      tabBtns[i].classList.remove('active');
+      if(pathName.includes(tabElements[i])){
+        tabBtns[i].classList.add('active');
+      };
+    };
+
+
+    // tabBtns.forEach(btn => {
+    //   btn.classList.remove('active');
+    // });
+
+    // if(pathName.includes('all')){
+    //   tabBtns[0].classList.add('active');
+    // } else if(pathName.includes('database')){
+    //   tabBtns[1].classList.add('active');
+    // } else if(pathName.includes('api')){
+    //   tabBtns[2].classList.add('active');
+    // } else if(pathName.includes('renewal')){
+    //   tabBtns[3].classList.add('active');
+    // } else if(pathName.includes('planning')){
+    //   tabBtns[3].classList.add('active');
+    // };
+
+
+
+
+
+  </script>
+
 
 </body>
 </html>

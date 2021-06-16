@@ -156,7 +156,7 @@
           //alert('abc');
           document.rate_form.submit();
           // modal.style.display = "none";
-        }
+        };
       </script>
 
     </div>

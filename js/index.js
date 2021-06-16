@@ -1,6 +1,3 @@
-
-
-
 //Cutting Contants Text
 
 const conTxt = document.querySelectorAll('.con-txt p a');
@@ -20,30 +17,31 @@ mobileMenu.onclick = () => {
 }
 
 
-//Pie Chart Rendering Code
+// //Pie Chart Rendering Code
 $(function(){
   $(window).ajaxComplete(function(){
-  let lWidth = 10;
-  let tWidth = 8;
+    let lWidth = 10;
+    let tWidth = 8;
 
-  let eachSize = 90;
-  let pieSize = 200;
-  let clearSet;
-  const winWidth = $(window).width();
+    let eachSize = 90;
+    let pieSize = 200;
+    let clearSet;
+    const winWidth = $(window).width();
 
-  
-  if(winWidth <= 1280 && winWidth > 950) {
-    pieSize = 180;
-  } else if(winWidth <= 950 && winWidth > 400){
-    pieSize = 170;
-  } else if( winWidth <= 400){
-    pieSize = 140;
-  } else {
-    pieSize = 200;
-  }
+    
+    if(winWidth <= 1280 && winWidth > 950) {
+      pieSize = 200;
+    } else if(winWidth <= 950 && winWidth > 400){
+      pieSize = 160;
+    } else if( winWidth <= 400){
+      pieSize = 140;
+    } else {
+      pieSize = 200;
+    }
 
 
-  // var chart = window.chart = new EasyPieChart(document.querySelector('.total-chart .chart'), {
+    // var chart = window.chart = new EasyPieChart(document.querySelector('.total-chart .chart'), {
+    $('.total-chart .chart canvas').removeData('easyPieChart').find('canvas').remove();
     $('.total-chart .chart').easyPieChart({
     easing: 'easeOutElastic',
     delay: 3000,
@@ -67,12 +65,12 @@ $(function(){
     if(winWidth <= 1280 && winWidth > 950) {
       pieSize = 180;
     } else if(winWidth <= 950 && winWidth > 400){
-      pieSize = 170;
+      pieSize = 160;
     } else if( winWidth <= 400){
       pieSize = 140;
     } else {
       pieSize = 200;
-    }
+    };
 
 
     clearTimeout(clearSet);
@@ -107,13 +105,13 @@ $(function(){
     } else {
       lWidth = 8;
       tWidth = 8;
-    }
+    };
 
     if(winWidth <= 1280) {
       eachSize = 90;
     } else {
       eachSize = 100;
-    }
+    };
 
   
     const poData = [
@@ -146,7 +144,7 @@ $(function(){
         // });
         });
       });
-    }
+    };
     startPie();
   });
 

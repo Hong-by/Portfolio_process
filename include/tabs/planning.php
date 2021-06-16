@@ -27,7 +27,10 @@
   <span><?=$db_row_cate?></span>
   <span><a href="#"><?=$db_row_tit?></a></span>
   <span><?=$db_row_reg?></span>
-  <span><a href="/schedule/php/sp_delete.php?del_idx=<?=$db_row_idx?>" class="del-btn">삭제</a></span>
+  <span>
+    <a href="/schedule/php/sp_delete.php?del_idx=<?=$board_row_idx?>" class="del-btn txt">삭제</a>
+    <a href="/schedule/php/sp_delete.php?del_idx=<?=$board_row_idx?>" class="del-btn icon"><i class="fa fa-times"></i></a>
+  </span>
 </li>
 <?php
   };
