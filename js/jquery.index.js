@@ -15,4 +15,6 @@ $(document).ready(function() {
   $(".each-btns").click(function(e){
     e.preventDefault();
   });
+
+  
 });

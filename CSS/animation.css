@@ -12,3 +12,14 @@
   0%{}
   100%{}
 }
+
+/* Mobile Menu Item Show Hide Animation */
+@keyframes show-hide{
+  0%{transform: translateY(-40px); opacity: 0; visibility: hidden;}
+  100%{transform: translateY(0); opacity: 1; visibility: visible;}
+}
+@keyframes hide-show{
+  0%{transform: translateY(0); opacity: 1; visibility: visible;}
+  100%{transform: translateY(-40px); opacity: 0; visibility: hidden; }
+  
+}

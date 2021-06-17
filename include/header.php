@@ -1,3 +1,18 @@
+
+<?php
+
+session_start();
+if(isset($_SESSION['authcode'])){
+  $authcode = $_SESSION['authcode'];
+} else {
+  echo "
+    <script>
+      location.href = 'http://localhost/schedule/pages/sp_auth.php';
+    </script>
+  ";
+}
+
+?>
 <header>
   <h2><a href="/schedule/index.php"><i class="custom-font"></i></a></h2>
   <ul class="gnb">
@@ -29,6 +44,12 @@
     <span></span>
     <span></span>
   </div>
+  <ul class="mobile-menu-items">
+    <li><a href="/schedule/index.php"><i class="fa fa-trello"></i></a></li>
+    <li><a href="/schedule/pages/sp_insert_form.php"><i class="fa fa-pencil"></i></a></li>
+    <li><a href="/schedule/pages/sp_detail_form.php?key=all"><i class="fa fa-search"></i></a></li>
+    <li><a href="#"><i class="fa fa-sign-out"></i></a></li>
+  </ul>
 </header>
 
 <script>

@@ -59,6 +59,7 @@
 
   /* Header Style Code */
   header{padding: 15px;}
+  .custom-font{font-size: 50px;}
 
   /* Graph-ui Contents Style Code */
   .graph-ui{height: auto; margin-top: 10px; width: 100%;}
@@ -73,6 +74,7 @@
   
   /* Table-ui Contents Style Code */
   .table-ui{height: auto; margin-top: 10px; width: 100%;}
+  .table-ui .each-project .each-btns button.active{font-size: 12px;}
 
   div.total-txt{padding: 30px;}
   div.total-txt h3{font-size: 16px;}
@@ -103,14 +105,17 @@
   .board-table li span:nth-child(4){width: 25%;}
   .board-table li span:nth-child(5){width: 15%;}
 
+  .graph-ui.detail .detail-board{max-height: 350px;}
+
 }
 
 @media screen and (max-width: 450px){
-  .graph-ui.detail .each-pofol .each-graph div{width: 50%;}
+  .graph-ui.detail .each-pofol .each-graph div{width: calc(50% -5px); height: 100px; margin: 5px 0;}
   .board-table li.board-contents span .del-btn.icon{display: block;}
   .board-table li.board-contents span .del-btn.txt{display: none;}
 
   .board-table li.board-contents span a:nth-child(3){text-align: left;}
+
 }
 
 
@@ -130,9 +135,9 @@
   /* .graph-ui div.intro a{} */
 
   .graph-ui .each-pofol .each-graph{flex-wrap: wrap;}
-  .graph-ui .each-pofol .each-graph div{width: calc(50% - 5px); margin-top: 10px;}
-  /* .graph-ui.detail .each-pofol{display: flex; align-content: center;} */
-  .graph-ui.detail .each-pofol .each-graph div{width: calc(50% - 5px); margin-top: 10px;}
+  .graph-ui .each-pofol .each-graph div{width: calc(50% - 5px); margin: 5px 0;}
+  .graph-ui.detail .each-pofol{display: flex; align-content: center;}
+  .graph-ui.detail .each-pofol .each-graph div{width: calc(50% - 5px);}
 
   .graph-ui>div.total-pofol{height: 350px; display: block;}
   .graph-ui>div.total-pofol div.total-chart,
@@ -158,12 +163,12 @@
   #updateBtn{font-size: 12px;}
 
   
-  .detail-board .board-btns a{padding: 10px};
+  .detail-board .board-btns a{padding: 10px}
 
   .board-table li span:nth-child(1){display: none;}
   .board-table li span:nth-child(2){display: none;}
-  .board-table li span:nth-child(3){width: 45%;}
-  .board-table li span:nth-child(4){width: 25%;}
+  .board-table li span:nth-child(3){width: 55%;}
+  .board-table li span:nth-child(4){width: 35%;}
   .board-table li span:nth-child(5){width: 15%;}
 
 

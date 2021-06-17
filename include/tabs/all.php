@@ -1,6 +1,16 @@
 <?php
+  $tabIdx = $_GET['key'];
   include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";//db 접속정보 로드
-  $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC";
+  
+
+  if($tabIdx == "all"){
+    $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC";
+  } else {
+    $sql = "SELECT * FROM sp_table WHERE SP_cate = '{$tabIdx}' ORDER BY SP_idx DESC";
+  };
+
+  // echo $tabIdx;
+  
   $board_result = mysqli_query($dbConn, $sql);
 
   while($board_row = mysqli_fetch_array($board_result)){

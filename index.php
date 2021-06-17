@@ -36,13 +36,13 @@
   <!-- Media Query CSS Link -->
   <link rel="stylesheet" href="/schedule/CSS/media.css">
 
-  <script defer>
+  <!-- <script defer>
     const hostname = window.location.href;
     console.log(hostname);
     if (hostname == 'http://hby033.dothome.co.kr/schedule/') {
       window.location.replace('http://hby033.dothome.co.kr/schedule/index.php?key=database');
     }
-  </script>
+  </script> -->
 
 </head>
 <body>

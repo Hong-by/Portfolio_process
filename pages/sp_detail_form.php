@@ -76,9 +76,9 @@
           <div class="board-btns">
             <a href="?key=all" class="active">All</a>
             <a href="?key=database">Database</a>
-            <a href="?key=api">API</a>
-            <a href="?key=renewal">Renewal</a>
-            <a href="?key=planning">Plannning</a>
+            <a href="?key=thermometer-half">API</a>
+            <a href="?key=clone">Renewal</a>
+            <a href="?key=bar-chart-o">Plannning</a>
           </div>
 
           <div class="board-table">
@@ -94,7 +94,7 @@
               <?php
                 $tabs_btn = $_GET['key'];
                 // echo $tabs_btn;
-                include $_SERVER["DOCUMENT_ROOT"].'/schedule/include/tabs/'.$tabs_btn.'.php';
+                include $_SERVER["DOCUMENT_ROOT"].'/schedule/include/tabs/all.php';
               ?>
                     
             </ul>
@@ -188,7 +188,7 @@
   <script>
     const pathName = window.location.href;
     const tabBtns = document.querySelectorAll('.board-btns a');
-    const tabElements = ['all', 'database', 'api', 'renewal', 'planning'];
+    const tabElements = ['all', 'database', 'thermometer-half', 'clone', 'bar-chart-o'];
     // console.log(tabBtns);
 
     for(let i = 0; i < tabBtns.length; i++){
