@@ -24,7 +24,7 @@
 <li class="board-contents">
   <span><?=$board_row_idx?></span>
   <span><?=$board_row_cate?></span>
-  <span><a href="#"><?=$board_row_tit?></a></span>
+  <span><a href="/schedule/pages/sp_detail_view.php?pageNum=<?=$board_row_idx?>"><?=$board_row_tit?></a></span>
   <span><?=$board_row_reg?></span>
   <span>
     <a href="/schedule/php/sp_delete.php?del_idx=<?=$board_row_idx?>" class="del-btn txt">삭제</a>
