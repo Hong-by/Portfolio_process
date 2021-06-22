@@ -6,5 +6,6 @@
 
   $json_string = file_get_contents($url);
   echo $json_string;
-
+  
 ?>
+

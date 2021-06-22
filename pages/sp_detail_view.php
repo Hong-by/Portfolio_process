@@ -131,6 +131,7 @@
 
           <div class="detail-btns">
             <button type="button" class="update-btn">수정</button>
+            <button type="button" class="delete-btn">삭제</button>
           </div>
 
 
@@ -164,6 +165,7 @@
   <script src="/schedule/js/total_avg.js"></script>
   <script>
     $(function(){
+      //수정 버튼 클릭 이벤트
       $(".update-btn").click(function(){
         $(this).toggleClass("on");
 
@@ -179,6 +181,16 @@
 
       });
 
+      //삭제 버튼 클릭 이벤트
+      $(".delete-btn").click(function(){
+        const isCheck = confirm('정말 삭제하시겠습니까?');
+        // alert(isCheck);
+        if(isCheck === false){
+          return false;
+        } else {
+          location.href='/schedule/php/sp_delete.php?del_idx=<?=$detail_num?>';
+        }
+      });
     });
 
 
