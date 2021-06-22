@@ -44,8 +44,8 @@
   <script defer>
     const hostname = window.location.href;
     console.log(hostname);
-    if (hostname == 'http://localhost/schedule/pages/sp_detail_form.php') {
-      window.location.replace('http://localhost/schedule/pages/sp_detail_form.php?key=all');
+    if (hostname == 'http://hby033.dothome.co.kr/schedule/pages/sp_detail_form.php') {
+      window.location.replace('http://hby033.dothome.co.kr/schedule/pages/sp_detail_form.php?key=all');
     } 
   </script>
 

@@ -36,13 +36,13 @@
   <!-- Media Query CSS Link -->
   <link rel="stylesheet" href="/schedule/CSS/media.css">
 
-  <!-- <script defer>
+  <script defer>
     const hostname = window.location.href;
     console.log(hostname);
     if (hostname == 'http://hby033.dothome.co.kr/schedule/') {
       window.location.replace('http://hby033.dothome.co.kr/schedule/index.php?key=database');
     }
-  </script> -->
+  </script>
 
 </head>
 <body>
@@ -62,62 +62,48 @@
 
       <section class="graph-ui">
         <div class="intro">
-          <div class="slide-box">
-            <?php
-              $sql1 = "SELECT * FROM sp_table WHERE SP_cate = 'database' ORDER BY SP_idx DESC LIMIT 1";
+          <?php
+            $sl_arr = array('database', 'thermometer-half', 'clone', 'bar-chart-o');
+            $sl_str = "";
+            
+            // var_dump($sl_arr);
+            // echo count($sl_arr);
+            for($i = 0; $i < count($sl_arr); $i++){
+              // echo $sl_arr[$i];
+          
+              $sql1 = "SELECT * FROM sp_table WHERE SP_cate = '$sl_arr[$i]' ORDER BY SP_idx DESC LIMIT 1";
               $sl_result = mysqli_query($dbConn, $sql1);
               $sl_result_row = mysqli_fetch_array($sl_result);
               $sl_idx = $sl_result_row['SP_idx'];
               $sl_con = $sl_result_row['SP_con'];
               $sl_cate = $sl_result_row['SP_cate'];
-            ?>
-            <h2>Database Project Process</h2>
+              
+
+              // echo $sl_idx.'<br>';
+              // echo $sl_con.'<br>';
+              // echo $sl_cate.'<br>';
+
+              if ($sl_cate == 'database'){
+                $sl_str = 'database';
+              } else if ($sl_cate == 'thermometer-half'){
+                $sl_str = 'API';
+              } else if ($sl_cate == 'clone'){
+                $sl_str = 'Renewal';
+              } else if ($sl_cate == 'bar-chart-o'){
+                $sl_str = 'Planning';
+              }
+
+          ?>
+          <div class="slide-box">
+            <h2><?=$sl_str?> Project Process</h2>
             <p><?=$sl_con?></p>
             <a href="/schedule/pages/sp_detail_view.php?pageNum=<?=$sl_idx?>">More Details</a>
             <i class="fa fa-<?=$sl_cate?>"></i>
           </div>
-          <div class="slide-box">
           <?php
-              $sql2 = "SELECT * FROM sp_table WHERE SP_cate = 'thermometer-half' ORDER BY SP_idx DESC LIMIT 1";
-              $sl_result2 = mysqli_query($dbConn, $sql2);
-              $sl_result_row2 = mysqli_fetch_array($sl_result2);
-              $sl_idx2 = $sl_result_row2['SP_idx'];
-              $sl_con2 = $sl_result_row2['SP_con'];
-              $sl_cate2 = $sl_result_row2['SP_cate'];
-            ?>
-            <h2>API Project Process</h2>
-            <p><?=$sl_con2?></p>
-            <a href="/schedule/pages/sp_detail_view.php?pageNum=<?=$sl_idx2?>">More Details</a>
-            <i class="fa fa-<?=$sl_cate2?>"></i>
-          </div>
-          <div class="slide-box">
-          <?php
-              $sql3 = "SELECT * FROM sp_table WHERE SP_cate = 'clone' ORDER BY SP_idx DESC LIMIT 1";
-              $sl_result3 = mysqli_query($dbConn, $sql3);
-              $sl_result_row3 = mysqli_fetch_array($sl_result3);
-              $sl_idx3 = $sl_result_row3['SP_idx'];
-              $sl_con3 = $sl_result_row3['SP_con'];
-              $sl_cate3 = $sl_result_row3['SP_cate'];
-            ?>
-            <h2>RENEWAL Project Process</h2>
-            <p><?=$sl_con3?></p>
-            <a href="/schedule/pages/sp_detail_view.php?pageNum=<?=$sl_idx3?>">More Details</a>
-            <i class="fa fa-<?=$sl_cate3?>"></i>
-          </div>
-          <div class="slide-box">
-          <?php
-              $sql4 = "SELECT * FROM sp_table WHERE SP_cate = 'bar-chart-o' ORDER BY SP_idx DESC LIMIT 1";
-              $sl_result4 = mysqli_query($dbConn, $sql4);
-              $sl_result_row4 = mysqli_fetch_array($sl_result4);
-              $sl_idx4 = $sl_result_row4['SP_idx'];
-              $sl_con4 = $sl_result_row4['SP_con'];
-              $sl_cate4 = $sl_result_row4['SP_cate'];
-            ?>
-            <h2>Database Project Process</h2>
-            <p><?=$sl_con4?></p>
-            <a href="/schedule/pages/sp_detail_view.php?pageNum=<?=$sl_idx4?>">More Details</a>
-            <i class="fa fa-<?=$sl_cate4?>"></i>
-          </div>
+            }
+          ?>
+
         </div>
         <div class="each-pofol">
           <div class="each-title">

@@ -1,3 +1,4 @@
+
 <!-- 2. 모달 박스 UI 제작 => style.css 160번째 줄  -->
 <div class="modal" id="myModal">
     <div class="modal-content">

@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <?php
 
 $auth_code = $_POST['auth_code'];

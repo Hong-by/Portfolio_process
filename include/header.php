@@ -4,10 +4,11 @@
 session_start();
 if(isset($_SESSION['usercode'])){
   $authcode = $_SESSION['usercode'];
+  setcookie('PHPSESSID', 'qnttg2vlbmvp41fu6o1rh5iv3o', time() + 1000, '/');
 } else {
   echo "
     <script>
-      location.href = 'http://localhost/schedule/pages/sp_auth.php';
+      location.href = 'http://hby033.dothome.co.kr/schedule/pages/sp_auth.php';
     </script>
   ";
 }

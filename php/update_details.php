@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <?php
 
   $update_unm = $_REQUEST['update_num'];

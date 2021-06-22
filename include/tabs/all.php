@@ -1,3 +1,4 @@
+
 <?php
   $tabIdx = $_GET['key'];
   include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";//db 접속정보 로드

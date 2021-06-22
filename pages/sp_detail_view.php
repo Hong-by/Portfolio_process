@@ -44,8 +44,8 @@
   <script defer>
     const hostname = window.location.href;
     console.log(hostname);
-    if (hostname == 'http://localhost/schedule/pages/sp_detail_form.php') {
-      window.location.replace('http://localhost/schedule/pages/sp_detail_form.php?key=all');
+    if (hostname == 'http://hby033.dothome.co.kr/schedule/pages/sp_detail_form.php') {
+      window.location.replace('http://hby033.dothome.co.kr/schedule/pages/sp_detail_form.php?key=all');
     } 
   </script>
 
@@ -140,7 +140,10 @@
 
 
       </section>
-
+    <!-- 2. 모달 박스 UI 제작 => style.css 160번째 줄  -->
+    <?php
+      include $_SERVER['DOCUMENT_ROOT']."/schedule/include/modal.php";
+    ?>
     <!--End of Main Dashboard Frame -->
   </div>
   
