@@ -16,5 +16,34 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
+  const wHeight = $(window).height();
+  const wWidth = $(window).width();
+
+  if(wHeight > 720 && wWidth > 450){
+    $(".wrapper").css('height', '100vh');
+  } else {
+    $(".wrapper").css('height', '100%');
+  }
+
+  if(wWidth > 450){
+    $(".wrapper").css('height', '100vh');
+  }
+
+  $(window).resize(function(){
+    const wHeight = $(window).height();
+    const wWidth = $(window).width();
+
+    if(wHeight > 720 && wWidth > 450){
+      $(".wrapper").css('height', '100vh');
+    } else {
+      $(".wrapper").css('height', '100%');
+    }
+
+    if(wWidth > 768){
+      $(".wrapper").css('height', '100vh');
+    } else {
+    $(".wrapper").css('height', '100%');
+    }
+  });
   
 });

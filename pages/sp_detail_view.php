@@ -89,6 +89,15 @@
             $detail_con = $detail_row['SP_con'];
             $detail_reg = $detail_row['SP_reg'];
 
+            
+            if($detail_cate == "thermometer-half"){
+              $detail_cate = "API";
+            } else if($detail_cate == "clone"){
+              $detail_cate = "Renewal";
+            } else if ($detail_cate == "bar-chart-o"){
+              $detail_cate = "Planning";
+            } 
+
             // echo $detail_num, $detail_cate;
 
           ?>

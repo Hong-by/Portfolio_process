@@ -20,6 +20,17 @@
     $board_row_tit = $board_row['SP_tit'];
     $board_row_reg = $board_row['SP_reg'];
 
+    if($board_row_cate == "thermometer-half"){
+      $board_row_cate = "API";
+    } else if($board_row_cate == "clone"){
+      $board_row_cate = "Renewal";
+    } else if ($board_row_cate == "bar-chart-o"){
+      $board_row_cate = "Planning";
+    } 
+
+
+
+
 ?>
 
 <li class="board-contents">

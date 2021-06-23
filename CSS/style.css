@@ -198,6 +198,8 @@ div.total-txt button:hover{background: #7c41f5; color: #fff;}
 
 #updateBtn{display: block; margin: 15px auto 0; border-radius: 3px;}
 
+
+
 /* Detail Page Style Code */
 .graph-ui.detail{width: calc(90% - 10px); display: flex; justify-content: space-between; flex-wrap: wrap; align-content: space-between; padding: 0;}
 .graph-ui.detail .total-pofol{height: 40%; width: calc(60% - 10px);}
