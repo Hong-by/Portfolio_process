@@ -43,3 +43,9 @@ Database를 활용해 제작한 스케줄링 Application입니다.  그래프의
 ![Untitled](./images/Untitled.png)
 
 ![My Schedule UI구조.png](./images/My_Schedule_UI_Structure.png)
+
+## Browser Support
+
+![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)</br>Chrome | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)</br>Firefox | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)</br>IE/edge | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png)</br>opera | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)</br>safari
+--- | --- | --- | --- | --- |
+Latest ✔ | Latest ✔ | <span style="color:red">No Support</span></br>/ 10+ ✔ | Latest ✔ | 6.1+ ✔ |
